@@ -132,6 +132,8 @@ export type PlainRtpParameters =
 
 const logger = new Logger('Transport');
 
+export { logger as transportLogger };
+
 export class Transport extends EnhancedEventEmitter
 {
 	// Id.

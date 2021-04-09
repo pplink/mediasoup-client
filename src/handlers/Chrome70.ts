@@ -25,6 +25,8 @@ import { SctpCapabilities, SctpStreamParameters } from '../SctpParameters';
 
 const logger = new Logger('Chrome70');
 
+export { logger as chrome70Logger };
+
 const SCTP_NUM_STREAMS = { OS: 1024, MIS: 1024 };
 
 export class Chrome70 extends HandlerInterface

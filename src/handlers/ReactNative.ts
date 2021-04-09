@@ -25,6 +25,8 @@ import { SctpCapabilities, SctpStreamParameters } from '../SctpParameters';
 
 const logger = new Logger('ReactNative');
 
+export { logger as reactNatvieLogger };
+
 const SCTP_NUM_STREAMS = { OS: 1024, MIS: 1024 };
 
 export class ReactNative extends HandlerInterface

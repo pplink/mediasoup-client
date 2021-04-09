@@ -14,6 +14,8 @@ export type DataConsumerOptions =
 
 const logger = new Logger('DataConsumer');
 
+export { logger as dataConsumerLogger };
+
 export class DataConsumer extends EnhancedEventEmitter
 {
 	// Id.

@@ -24,6 +24,8 @@ import { SctpCapabilities, SctpStreamParameters } from '../SctpParameters';
 
 const logger = new Logger('Safari11');
 
+export { logger as safari11Logger };
+
 const SCTP_NUM_STREAMS = { OS: 1024, MIS: 1024 };
 
 export class Safari11 extends HandlerInterface

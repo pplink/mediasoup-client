@@ -36,6 +36,8 @@ export type ProducerCodecOptions =
 
 const logger = new Logger('Producer');
 
+export { logger as producerLogger };
+
 export class Producer extends EnhancedEventEmitter
 {
 	// Id.

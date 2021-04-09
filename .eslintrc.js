@@ -175,7 +175,7 @@ const eslintConfig =
 	}
 };
 
-switch (process.env.MEDIASOUP_NODE_LANGUAGE)
+switch ('typescript')
 {
 	case 'typescript':
 	{

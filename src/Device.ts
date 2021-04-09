@@ -22,6 +22,8 @@ import { SctpCapabilities } from './SctpParameters';
 
 const logger = new Logger('Device');
 
+export { logger as deviceLogger };
+
 export type BuiltinHandlerName =
 	| 'Chrome74'
 	| 'Chrome70'

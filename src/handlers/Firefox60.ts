@@ -25,6 +25,8 @@ import { SctpCapabilities, SctpStreamParameters } from '../SctpParameters';
 
 const logger = new Logger('Firefox60');
 
+export { logger as firefox60Logger };
+
 const SCTP_NUM_STREAMS = { OS: 16, MIS: 2048 };
 
 export class Firefox60 extends HandlerInterface

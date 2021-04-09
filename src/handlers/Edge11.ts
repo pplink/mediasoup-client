@@ -27,6 +27,8 @@ import { SctpCapabilities } from '../SctpParameters';
 
 const logger = new Logger('Edge11');
 
+export { logger as edge11Logger };
+
 export class Edge11 extends HandlerInterface
 {
 	// Generic sending RTP parameters for audio and video.

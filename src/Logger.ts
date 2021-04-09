@@ -1,47 +1,59 @@
 import debug from 'debug';
+import type { Loggable } from '@pplink/logger';
 
 const APP_NAME = 'mediasoup-client';
 
-export class Logger
+export class Logger 
 {
-	private readonly _debug: debug.Debugger;
-	private readonly _warn: debug.Debugger;
-	private readonly _error: debug.Debugger;
+	private _debug: (formatter: any, ...args: any[]) => void;
+	private _warn: (formatter: any, ...args: any[]) => void;
+	private _error: (formatter: any, ...args: any[]) => void;
 
-	constructor(prefix?: string)
+	constructor(prefix?: string) 
 	{
-		if (prefix)
+		if (prefix) 
 		{
 			this._debug = debug(`${APP_NAME}:${prefix}`);
 			this._warn = debug(`${APP_NAME}:WARN:${prefix}`);
 			this._error = debug(`${APP_NAME}:ERROR:${prefix}`);
 		}
-		else
+		else 
 		{
 			this._debug = debug(APP_NAME);
 			this._warn = debug(`${APP_NAME}:WARN`);
 			this._error = debug(`${APP_NAME}:ERROR`);
 		}
-
-		/* eslint-disable no-console */
-		this._debug.log = console.info.bind(console);
-		this._warn.log = console.warn.bind(console);
-		this._error.log = console.error.bind(console);
-		/* eslint-enable no-console */
 	}
 
-	get debug(): debug.Debugger
+	get debug(): (formatter: any, ...args: any[]) => void 
 	{
 		return this._debug;
 	}
-
-	get warn(): debug.Debugger
+	get warn(): (formatter: any, ...args: any[]) => void 
 	{
 		return this._warn;
 	}
-
-	get error(): debug.Debugger
+	get error(): (formatter: any, ...args: any[]) => void 
 	{
 		return this._error;
+	}
+
+	public setExternalLogger(input: Loggable, prefix:string) 
+	{
+		/**
+		 * not export debug log
+		 */
+		// this._debug = (formatter: any, ...args: any[]) => 
+		// {
+		// 	input.log(`${prefix}:${JSON.stringify(formatter)}`, ...args);
+		// };
+		this._warn = (formatter: any, ...args: any[]) => 
+		{
+			input.warn(`${prefix}:${JSON.stringify(formatter)}`, ...args);
+		};
+		this._error = (formatter: any, ...args: any[]) => 
+		{
+			input.error(`${prefix}:${JSON.stringify(formatter)}`, ...args);
+		};
 	}
 }

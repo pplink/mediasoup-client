@@ -18,6 +18,8 @@ import { SctpParameters } from '../../SctpParameters';
 
 const logger = new Logger('RemoteSdp');
 
+export { logger as remoteSdpLogger };
+
 export class RemoteSdp
 {
 	// Remote ICE parameters.

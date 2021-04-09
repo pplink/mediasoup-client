@@ -15,6 +15,8 @@ export type DataProducerOptions =
 
 const logger = new Logger('DataProducer');
 
+export { logger as dataProducerLogger };
+
 export class DataProducer extends EnhancedEventEmitter
 {
 	// Id.
