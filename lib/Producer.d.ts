@@ -1,3 +1,4 @@
+import { Logger } from './Logger';
 import { EnhancedEventEmitter } from './EnhancedEventEmitter';
 import { RtpCodecCapability, RtpParameters, RtpEncodingParameters } from './RtpParameters';
 export declare type ProducerOptions = {
@@ -21,6 +22,8 @@ export declare type ProducerCodecOptions = {
     videoGoogleMaxBitrate?: number;
     videoGoogleMinBitrate?: number;
 };
+declare const logger: Logger;
+export { logger as producerLogger };
 export declare class Producer extends EnhancedEventEmitter {
     private readonly _id;
     private readonly _localId;

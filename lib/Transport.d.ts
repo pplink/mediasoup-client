@@ -1,3 +1,4 @@
+import { Logger } from './Logger';
 import { EnhancedEventEmitter } from './EnhancedEventEmitter';
 import { HandlerFactory, HandlerInterface } from './handlers/HandlerInterface';
 import { Producer, ProducerOptions } from './Producer';
@@ -100,6 +101,8 @@ export declare type PlainRtpParameters = {
     ipVersion: 4 | 6;
     port: number;
 };
+declare const logger: Logger;
+export { logger as transportLogger };
 export declare class Transport extends EnhancedEventEmitter {
     private readonly _id;
     private _closed;
@@ -206,5 +209,4 @@ export declare class Transport extends EnhancedEventEmitter {
     _handleDataProducer(dataProducer: DataProducer): void;
     _handleDataConsumer(dataConsumer: DataConsumer): void;
 }
-export {};
 //# sourceMappingURL=Transport.d.ts.map

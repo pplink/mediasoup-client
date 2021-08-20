@@ -1,3 +1,4 @@
+import { Logger } from './Logger';
 import { EnhancedEventEmitter } from './EnhancedEventEmitter';
 import { RtpParameters } from './RtpParameters';
 export declare type ConsumerOptions = {
@@ -7,6 +8,8 @@ export declare type ConsumerOptions = {
     rtpParameters: RtpParameters;
     appData?: any;
 };
+declare const logger: Logger;
+export { logger as consumerLogger };
 export declare class Consumer extends EnhancedEventEmitter {
     private readonly _id;
     private readonly _localId;

@@ -1,3 +1,4 @@
+import { Logger } from './Logger';
 import { EnhancedEventEmitter } from './EnhancedEventEmitter';
 import { SctpStreamParameters } from './SctpParameters';
 export declare type DataConsumerOptions = {
@@ -8,6 +9,8 @@ export declare type DataConsumerOptions = {
     protocol?: string;
     appData?: any;
 };
+declare const logger: Logger;
+export { logger as dataConsumerLogger };
 export declare class DataConsumer extends EnhancedEventEmitter {
     private readonly _id;
     private readonly _dataProducerId;
@@ -62,11 +65,11 @@ export declare class DataConsumer extends EnhancedEventEmitter {
     /**
      * DataChannel binaryType.
      */
-    get binaryType(): string;
+    get binaryType(): BinaryType;
     /**
      * Set DataChannel binaryType.
      */
-    set binaryType(binaryType: string);
+    set binaryType(binaryType: BinaryType);
     /**
      * App custom data.
      */
