@@ -1,6 +1,6 @@
 {
-  "name": "mediasoup-client",
-  "version": "3.6.37-logger",
+  "name": "@pplink/mediasoup-client",
+  "version": "3.6.37-pplink1",
   "description": "mediasoup client side JavaScript library",
   "contributors": [
     "Iñaki Baz Castillo <ibc@aliax.net> (https://inakibaz.me)",
@@ -47,8 +47,8 @@
     "supports-color": "^8.1.1"
   },
   "devDependencies": {
-    "@types/sdp-transform": "^2.4.5",
     "@pplink/logger": "^0.0.8",
+    "@types/sdp-transform": "^2.4.5",
     "@types/uuid": "^3.4.9",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.29.0",
@@ -58,7 +58,7 @@
     "jest-tobetype": "^1.2.3",
     "open-cli": "^6.0.1",
     "tsc-watch": "^4.4.0",
-    "typescript": "^3.8",
+    "typescript": "^4.3.5",
     "uuid": "^3.4.0"
   }
 }

@@ -1,7 +1,10 @@
+import { Logger } from '../Logger';
 import { HandlerFactory, HandlerInterface, HandlerRunOptions, HandlerSendOptions, HandlerSendResult, HandlerReceiveOptions, HandlerReceiveResult, HandlerSendDataChannelOptions, HandlerSendDataChannelResult, HandlerReceiveDataChannelOptions, HandlerReceiveDataChannelResult } from './HandlerInterface';
 import { IceParameters } from '../Transport';
 import { RtpCapabilities } from '../RtpParameters';
 import { SctpCapabilities } from '../SctpParameters';
+declare const logger: Logger;
+export { logger as chrome70Logger };
 export declare class Chrome70 extends HandlerInterface {
     private _direction?;
     private _remoteSdp?;

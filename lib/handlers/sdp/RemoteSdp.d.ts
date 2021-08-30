@@ -1,8 +1,11 @@
+import { Logger } from '../../Logger';
 import { MediaSection } from './MediaSection';
 import { IceParameters, IceCandidate, DtlsParameters, DtlsRole, PlainRtpParameters } from '../../Transport';
 import { ProducerCodecOptions } from '../../Producer';
 import { MediaKind, RtpParameters } from '../../RtpParameters';
 import { SctpParameters } from '../../SctpParameters';
+declare const logger: Logger;
+export { logger as remoteSdpLogger };
 export declare class RemoteSdp {
     private _iceParameters?;
     private readonly _iceCandidates?;

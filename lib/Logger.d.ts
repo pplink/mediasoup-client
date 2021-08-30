@@ -1,11 +1,12 @@
-import debug from 'debug';
+import type { Loggable } from '@pplink/logger';
 export declare class Logger {
-    private readonly _debug;
-    private readonly _warn;
-    private readonly _error;
+    private _debug;
+    private _warn;
+    private _error;
     constructor(prefix?: string);
-    get debug(): debug.Debugger;
-    get warn(): debug.Debugger;
-    get error(): debug.Debugger;
+    get debug(): (formatter: any, ...args: any[]) => void;
+    get warn(): (formatter: any, ...args: any[]) => void;
+    get error(): (formatter: any, ...args: any[]) => void;
+    setExternalLogger(input: Loggable, prefix: string): void;
 }
 //# sourceMappingURL=Logger.d.ts.map

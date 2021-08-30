@@ -1,3 +1,4 @@
+import { Logger } from './Logger';
 import { EnhancedEventEmitter } from './EnhancedEventEmitter';
 import { SctpStreamParameters } from './SctpParameters';
 export declare type DataProducerOptions = {
@@ -8,6 +9,8 @@ export declare type DataProducerOptions = {
     protocol?: string;
     appData?: any;
 };
+declare const logger: Logger;
+export { logger as dataProducerLogger };
 export declare class DataProducer extends EnhancedEventEmitter {
     private readonly _id;
     private readonly _dataChannel;

@@ -1,7 +1,10 @@
+import { Logger } from '../Logger';
 import { HandlerFactory, HandlerInterface, HandlerRunOptions, HandlerSendOptions, HandlerSendResult, HandlerReceiveOptions, HandlerReceiveResult, HandlerSendDataChannelOptions, HandlerSendDataChannelResult, HandlerReceiveDataChannelOptions, HandlerReceiveDataChannelResult } from './HandlerInterface';
 import { IceParameters } from '../Transport';
 import { RtpCapabilities } from '../RtpParameters';
 import { SctpCapabilities } from '../SctpParameters';
+declare const logger: Logger;
+export { logger as edge11Logger };
 export declare class Edge11 extends HandlerInterface {
     private _sendingRtpParametersByKind?;
     private _remoteIceParameters?;
